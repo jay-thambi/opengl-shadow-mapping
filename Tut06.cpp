@@ -464,9 +464,10 @@ bool InitContext() {
   // Initialize GLFW and OpenGL version
   glfwInit();
 
-  // Set OpenGL version to 2.1, to support more hardware
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+  // Set OpenGL version to 3.3 for modern features
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   // Create Window and rendering context using GLFW, resolution is 800x600
   window = glfwCreateWindow(WIDTH, HEIGHT, "Comp371 - Tut 06", NULL, NULL);

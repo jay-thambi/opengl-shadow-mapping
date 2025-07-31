@@ -1,5 +1,5 @@
-#version 110
-attribute vec3 position;
+#version 330 core
+layout (location = 0) in vec3 position;
 
 uniform mat4 transform_in_light_space;
 

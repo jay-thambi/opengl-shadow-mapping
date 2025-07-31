@@ -1,0 +1,23 @@
+{
+    "name": "OpenGL Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libglfw3-dev libglew-dev libglm-dev freeglut3-dev",
+    "remoteUser": "vscode"
+}

@@ -1,9 +1,9 @@
-#version 110
+#version 330 core
 
 uniform vec3 view_position;
 
-attribute vec3 position;
-attribute vec3 normals;
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normals;
 
 uniform mat4 model_matrix;
 uniform mat4 view_matrix;

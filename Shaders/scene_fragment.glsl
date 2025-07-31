@@ -1,4 +1,4 @@
-#version 110
+#version 330 core
 
 const float PI = 3.1415926535897932384626433832795;
 
@@ -21,11 +21,13 @@ uniform vec3 view_position;
 
 uniform sampler2D shadow_map;
 
-varying vec3 fragment_position;
-varying vec4 fragment_position_light_space;
-varying vec3 fragment_normal;
+in vec3 fragment_position;
+in vec4 fragment_position_light_space;
+in vec3 fragment_normal;
 
-varying vec4 gl_FragCoord;
+in vec4 gl_FragCoord;
+
+out vec4 result;
 
 vec3 ambient_color(vec3 light_color_arg) {
     return shading_ambient_strength * light_color_arg;
@@ -83,6 +85,6 @@ void main()
     
     vec3 color = (specular + diffuse + ambient) * object_color;
     
-    gl_FragColor = vec4(color, 1.0f);
+    result = vec4(color, 1.0f);
 }
 
