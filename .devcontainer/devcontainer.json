@@ -18,6 +18,13 @@
             ]
         }
     },
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libglfw3-dev libglew-dev libglm-dev freeglut3-dev",
-    "remoteUser": "vscode"
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libglfw3-dev libglew-dev libglm-dev freeglut3-dev xvfb mesa-utils",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+    ],
+    "runArgs": [
+        "--env",
+        "DISPLAY=:99"
+    ]
 }
